@@ -1,18 +1,6 @@
 import os
 import streamlit as st 
 import pickle
-
-#install ff in terminal 
-# !pip install openpyxl
-# pandas need openpyxl to read excel file, if your file is in excel
-# !pip install pandas
-# !pip install sentence-transformers
-# !pip install bertopic
-# !pip install ipython
-# !pip install streamlit
-# may take around 30 seconds. will output requirement already satisfied or installed successfully when final
-
-
 import pandas as pd
 import numpy as np
 from sentence_transformers import SentenceTransformer
@@ -27,6 +15,8 @@ import transformers
 import requests
 import time
 import pickle
+
+# Note: Make sure that you have installed "requirements.txt"
 
 
 
@@ -54,26 +44,42 @@ def process_model(input_file_path):
 def main():
 
     st.set_page_config(
-        page_title="WMS Incident Analysis Clustering",
+        page_title="Incident Analysis Clustering",
         page_icon = ":computer:",
         layout='wide'
     )
 
+    st.sidebar.info("**Hello!** Welcome to the Incident Clustering Analysis Tool! This tool is created as a tool to help improve problem management of incident tickets! Get started by uploading a CSV file.",  icon="👋")
+
+    st.sidebar.divider()
+
     st.sidebar.subheader("📥 Upload a CSV file")
-    st.sidebar.markdown(":green[*Please ensure the first row has the column names.*]")
-    uploaded_file = st.sidebar.file_uploader("", accept_multiple_files=False, type="csv")
+
+    uploaded_file = st.sidebar.file_uploader(
+        ":green[*Please ensure the first row has the column names.*]", type="csv")
+
 
     # Main page content
-    st.title("Incident Clustering App")
-
+    st.header(":computer: Incident Clustering Analysis Tool", divider = 'gray')
+   
+    # Processing the file
     if uploaded_file: 
         file_df = pd.read_csv(uploaded_file, encoding='latin1').apply(lambda x: x.astype(str)).rename(columns={'problem_id.u_component': 'problem_component', 'inc_short_description': 'short_description'})
+        
         if st.sidebar.button("Run Model"):
-            # Spinner loader
-                with st.spinner("Operation in progress. Please wait."):
-                    # Process the model
-                    topics, probs, result = process_model(file_df)
 
+                with st.status(":orange[**Analyzing data...**]", expanded=True) as status:
+                    st.caption("*Preparing data...*")
+                    time.sleep(2)
+                    st.caption("*Loading Model...*")
+                    time.sleep(1)
+                    st.caption("*Clustering data...*")
+                    topics, probs, result = process_model(file_df)
+                    status.update(
+                    label=":green[**Analysis Complete!**]", state="complete", expanded=False
+                    )
+
+                
                 # Display the result
                 st.write(result)
     

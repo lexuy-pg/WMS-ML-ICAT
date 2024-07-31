@@ -1,0 +1,7 @@
+pandas
+sentence-transformers
+transformers
+bertopic
+ipython
+streamlit
+openpyxl
