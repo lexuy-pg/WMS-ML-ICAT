@@ -44,19 +44,19 @@ def process_model(input_file_path):
 def main():
 
     st.set_page_config(
-        page_title="Incident Analysis Clustering",
+        page_title="Incident Clustering Analysis Tool",
         page_icon = ":computer:",
         layout='wide'
     )
 
-    st.sidebar.info("**Hello!** Welcome to the Incident Clustering Analysis Tool! This tool is created as a tool to help improve problem management of incident tickets! Get started by uploading a CSV file.",  icon="👋")
+    st.sidebar.info("**Hello!** Welcome to the Incident Clustering Analysis Tool - ICAT! This tool was created as an aid to improve problem management of SNOW incident tickets! Get started by uploading a CSV file!",  icon="👋")
 
     st.sidebar.divider()
 
     st.sidebar.subheader("📥 Upload a CSV file")
 
     uploaded_file = st.sidebar.file_uploader(
-        ":green[*Please ensure the first row has the column names.*]", type="csv")
+        ":green[*Please ensure that the file is in **CSV** format and the first row has column names.*]", type="csv")
 
 
     # Main page content
