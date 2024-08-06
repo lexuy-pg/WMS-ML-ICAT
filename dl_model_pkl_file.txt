@@ -1,0 +1,6 @@
+Due to the nature and size of the file it often gets corrupted when pushing & cloning through github,
+so if you encounter an error related to this pls download the pickle file from this link:
+
+https://pgone.sharepoint.com/:u:/s/FY2324PHInternship-LexUy/EQUUmLCjJfRMv4b9ntZuBUoBKPVft4KaE-YcbmGwEdC7WA?e=O9iapD
+
+Once downloaded, move it to the ICAT folder. Then, run the app in the terminal $ streamlit run run_model.py 
