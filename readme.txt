@@ -17,7 +17,7 @@ Reminders for installation & running the model
 1. Install the VSCode Python Extension 
 2. Install C++ Builder Tools: https://visualstudio.microsoft.com/visual-cpp-build-tools/
 3. Make sure to $ pip install -r requirements.txt
-4. Once all of these are done, you can run the model $ streamlit run run_model.Python
+4. Once all of these are done, you can run the model $ streamlit run run_model.py
 
 ------------------------------------
 ------------------------------------
