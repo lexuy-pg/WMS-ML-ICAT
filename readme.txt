@@ -24,7 +24,7 @@ Reminders for installation & running the model
 
 Common Issues & Watch-outs
 
-1. Running the "train_model_ul.ipynb" Notebook and you get an SSL error, 
+1. Running the "train_model_ul.ipynb" Notebook and you get an ‘SSLCertVerificationError' error, 
     This may be a Network issue especially if you are working from home, 
         (a) you may want to run the Notebook in the office connected to P&G Network 
         (b) or disable Zscaler but this will need a code
