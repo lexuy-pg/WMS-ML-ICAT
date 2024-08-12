@@ -27,7 +27,7 @@ Common Issues & Watch-outs
 1. Running the "train_model_ul.ipynb" Notebook and you get an ‘SSLCertVerificationError' error, 
     This may be a Network issue especially if you are working from home, 
         (a) you may want to run the Notebook in the office connected to P&G Network 
-        (b) or disable Zscaler but this will need a code
+        (b) or disable Zscaler but this will need a code from network team
 
 2. 'Unpickling error' - 
     This means that the pkl file for the model was corrupted options
