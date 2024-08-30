@@ -44,7 +44,7 @@ def process_model(input_file_path):
 def main():
 
     st.set_page_config(
-        page_title="Incident Clustering Analysis Tool",
+        page_title="Warehousing - Incident Clustering Analysis Tool",
         page_icon = ":computer:",
         layout='wide'
     )
